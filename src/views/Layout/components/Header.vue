@@ -3,13 +3,13 @@ import { getCategoryAPI } from "@/apis/layout";
 
 import { ref, onMounted } from "vue";
 
-const list = ref([]);
+const categoryList = ref([]);
 
 const getCategory = async () => {
   let res = await getCategoryAPI();
   console.log("res", res);
   if (res.code == "1") {
-    list.value = res.result;
+    categoryList.value = res.result;
   }
 };
 
@@ -25,12 +25,9 @@ onMounted(() => {
         <RouterLink to="/">小兔鲜</RouterLink>
       </h1>
       <ul class="app-header-nav">
-        <li class="home" v-for="item in list" :key="item.id">
+        <li class="home" v-for="item in categoryList" :key="item.id">
           <RouterLink to="/">{{ item.name }}</RouterLink>
         </li>
-        <!-- <li><RouterLink to="/">居家</RouterLink></li>
-        <li><RouterLink to="/">美食</RouterLink></li>
-        <li><RouterLink to="/">服饰</RouterLink></li> -->
       </ul>
       <div class="search">
         <i class="iconfont icon-search"></i>
