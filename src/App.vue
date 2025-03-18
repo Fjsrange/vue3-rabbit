@@ -3,9 +3,13 @@ import { RouterView } from "vue-router";
 </script>
 
 <template>
-  <el-button type="primary">Primary</el-button>
+  <div class="test">asdas</div>
   <!-- 一级路由出口 -->
   <RouterView />
 </template>
 
-<style scoped></style>
+<style scoped lang="scss">
+.test {
+  color: $xtxColor;
+}
+</style>
