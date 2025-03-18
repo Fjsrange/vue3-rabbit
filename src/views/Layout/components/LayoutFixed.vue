@@ -1,6 +1,5 @@
 <script setup>
 import { useScroll } from "@vueuse/core";
-import { ref, computed } from "vue";
 
 const { y } = useScroll(window);
 </script>
